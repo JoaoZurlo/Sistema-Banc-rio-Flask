@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .buttons-container {
+            text-align: center;
+        }
+        .buttons-container form {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conta {{ conta.numero }}</h1>
+    <p>Titular: <span>{{ conta.titular }}</span></p>
+    <p>Saldo Atual: R$ {{ '%.2f' % conta.saldo }}</p>
+    <div class="buttons-container">
+        <form action="{{ url_for('deposito', numero=conta.numero) }}" method="POST">
+            <button type="submit" class="deposito">Depositar</button>
+        </form>
+        <form action="{{ url_for('saque', numero=conta.numero) }}" method="POST">
+            <button type="submit" class="saque">Sacar</button>
+        </form>
+        <form action="{{ url_for('extrato', numero=conta.numero) }}" method="GET">
+            <button type="submit" class="extrato">Extrato</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+

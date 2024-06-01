@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Conta</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="titulopg">
+    <h1>Cadastro de Conta</h1>
+    {% if mensagem %}
+    <p>{{ mensagem }}</p>
+    {% endif %}
+    <form action="{{ url_for('criar_conta') }}" method="POST" class="campos">
+        <label for="numero">Número da Conta:</label>
+        <input type="text" id="numero" name="numero" value="{{ numero_conta }}" readonly required class="numero_conta"><br>
+        <label for="titular">Titular:</label>
+        <input type="text" id="titular" name="titular" required class="nome_titular"><br>
+        <label for="saldo_inicial">Saldo Inicial:</label>
+        <input type="number" id="saldo_inicial" name="saldo_inicial" value="500.00" readonly required class="saldo_inicial"><br>
+        <button type="submit">Criar Conta</button>
+    </form>
+</body>
+</html>

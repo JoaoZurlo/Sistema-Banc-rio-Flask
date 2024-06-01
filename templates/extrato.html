@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrato</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Extrato da Conta {{ numero }}</h1>
+    <h2>Transações:</h2>
+    <ul>
+        {% for transacao in historico %}
+        <li class="{{ 'deposito' if transacao.tipo == 'Depósito' else 'saque' }}">
+            {{ transacao.tipo }}: R$ {{ '%.2f' | format(transacao.valor) }}
+        </li>
+        {% endfor %}
+    </ul>
+    <h2>Saldo Atual: <span class="saldo">R$ {{ '%.2f' | format(saldo) }}</span></h2>
+    <a href="{{ url_for('conta', numero=numero) }}">Voltar</a>
+</body>
+</html>

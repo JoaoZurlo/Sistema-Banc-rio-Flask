@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: rgb(222, 29, 29);
+    text-align: center;
+    padding-top: 140px;
+    
+}
+
+h1 {
+    color: #ffffff;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    background-color: black;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.deposito {
+    background-color: rgb(12, 81, 19);
+    text-align: center;
+}
+
+.saque {
+    background-color: rgb(124, 16, 16);
+    text-align: center;
+}
+
+.extrato {
+    background-color: blue;
+    text-align: center;
+}
+
+.saldo {
+    color: blue;
+    text-align: center;
+}
+
+.titulopg {
+    text-align: center;
+    padding-top: 140px;
+    
+}
+
+.numero_conta{
+    background-color: rgba(169, 169, 169, 0.983);
+    text-align: center;
+}
+
+.nome_titular{
+    text-align: center;
+}
+
+.saldo_inicial{
+    text-align: center;
+    background-color: rgba(169, 169, 169, 0.983);
+}
+

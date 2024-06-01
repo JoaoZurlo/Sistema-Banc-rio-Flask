@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saque</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Saque da Conta {{ numero }}</h1>
+    {% if mensagem %}
+    <p>{{ mensagem }}</p>
+    {% endif %}
+    <form action="{{ url_for('saque', numero=numero) }}" method="POST">
+        <label for="valor">Valor do Saque:</label>
+        <input type="number" id="valor" name="valor" step="0.01" required><br>
+        <button type="submit" class="saque">Sacar</button>
+    </form>
+    <a href="{{ url_for('conta', numero=numero) }}">Voltar</a>
+</body>
+</html>
