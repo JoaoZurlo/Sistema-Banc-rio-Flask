@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,12 +13,17 @@
     {% endif %}
     <form action="{{ url_for('criar_conta') }}" method="POST" class="campos">
         <label for="numero">Número da Conta:</label>
-        <input type="text" id="numero" name="numero" value="{{ numero_conta }}" readonly required class="numero_conta"><br>
+        <input type="text" id="numero" name="numero" value="{{ numero_da_conta }}" readonly required class="numero_conta"><br>
         <label for="titular">Titular:</label>
-        <input type="text" id="titular" name="titular" required class="nome_titular"><br>
-        <label for="saldo_inicial">Saldo Inicial:</label>
-        <input type="number" id="saldo_inicial" name="saldo_inicial" value="500.00" readonly required class="saldo_inicial"><br>
+        <input type="text" id="titular" name="titular" required class="nome_titular" placeholder="Nome"><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required class="email" placeholder="exemplo@gmail.com"><br>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required class="senha" placeholder="Senha" autocomplete="current-password"><br>
         <button type="submit">Criar Conta</button>
+        <div class="register-link">
+            <p>Já possui cadastro? acesse <a href="{{ url_for('login') }}"> aqui!</a></p>
+        </div>
     </form>
 </body>
 </html>

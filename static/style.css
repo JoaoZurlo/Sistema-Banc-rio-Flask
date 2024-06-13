@@ -1,10 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: rgb(222, 29, 29);
+    background:  grey;
     text-align: center;
-    padding-top: 140px;
-    
+}
+
+.titulopg{
+    margin-top: -40px;
+}
+
+.pgConta{
+    margin-top: 80px;
+}
+
+.pgDeposito{
+    margin-top: 40px;
+}
+
+.pgExtrato{
+    margin-top: 40px;
 }
 
 h1 {
@@ -31,25 +44,37 @@ button {
     border: none;
     cursor: pointer;
     text-align: center;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 
 button:hover {
     opacity: 0.8;
 }
 
+.cpf{
+    text-align: center;
+}
+
+.email{
+    text-align: center;
+}
+
+#ocupacao {
+    width: 172px;
+    text-align: center;
+}
+
 .deposito {
-    background-color: rgb(12, 81, 19);
+    background-color: rgb(4, 58, 9);
     text-align: center;
 }
 
 .saque {
-    background-color: rgb(124, 16, 16);
+    background-color: rgb(179, 9, 9);
     text-align: center;
 }
 
 .extrato {
-    background-color: blue;
     text-align: center;
 }
 
@@ -73,8 +98,37 @@ button:hover {
     text-align: center;
 }
 
-.saldo_inicial{
+.credito{
     text-align: center;
     background-color: rgba(169, 169, 169, 0.983);
 }
 
+.senha{
+    text-align: center;
+}
+
+.login-container {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+.login-container input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+.login-container button {
+    padding: 10px 20px;
+}
+.login-container .register-link {
+    margin-top: 20px;
+}
+
+.Loginpg {
+    text-align: center;
+    padding-top: 140px;
+}

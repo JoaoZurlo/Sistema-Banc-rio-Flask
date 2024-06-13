@@ -1,22 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extrato</title>
     <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+
+        
+        .table-container {
+            width: 80%;
+            text-align: center; /* Alinha o texto ao centro */
+        }
+
+        table {
+            width: 100%; /* Define a largura da tabela */
+            border-collapse: collapse; /* Remove espaços entre as células */
+        }
+
+        th, td {
+            padding: 10px; /* Adiciona padding para espaçamento interno */
+            border: 1px solid black; /* Adiciona bordas às células */
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Extrato da Conta {{ numero }}</h1>
-    <h2>Transações:</h2>
-    <ul>
-        {% for transacao in historico %}
-        <li class="{{ 'deposito' if transacao.tipo == 'Depósito' else 'saque' }}">
-            {{ transacao.tipo }}: R$ {{ '%.2f' | format(transacao.valor) }}
-        </li>
-        {% endfor %}
-    </ul>
-    <h2>Saldo Atual: <span class="saldo">R$ {{ '%.2f' | format(saldo) }}</span></h2>
-    <a href="{{ url_for('conta', numero=numero) }}">Voltar</a>
+    <h1>Extrato</h1>
+    <table class="extrato">
+        <thead>
+            <tr>
+                <th style="padding: 10px;">Número da Conta</th>
+                <th style="padding: 10px;"">Tipo de Transação</th>
+                <th style="padding: 10px;">Valor</th>
+                <th style="padding: 10px;">Data/Hora</th>
+            </tr>
+        </thead>
+        <tbody class="Transacoes">
+            {% set extrato_id = 1%}
+            {% for transacao in transacoes %}
+            <tr class="{% if transacao[2] == 'Depósito' %}deposito{% elif transacao[2] == 'Saque' %}saque{% endif %}">
+                <td>{{ transacao[1] }}</td>
+                <td>{{ transacao[2] }}</td>
+                <td>{{ transacao[3] }}</td>
+                <td>{{ transacao[4] }}</td>
+            </tr>
+            {% endfor %}
+            {% set extrato_id = extrato_id + 1 %}
+        </tbody>
+    </table>
 </body>
 </html>

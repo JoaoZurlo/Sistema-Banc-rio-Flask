@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="Loginpg">
+    <h1>Login</h1>
+    {% if mensagem %}
+    <p style="color: red;">{{ mensagem }}</p>
+    {% endif %}
+    <form action="{{ url_for('login') }}" method="POST">
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" required class="email" placeholder="exemplo@gmail.com"><br>
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" name="senha" required class="senha" placeholder="Senha" autocomplete="current-password"><br><br>
+        <input type="submit" value="Login">
+        <p>Ainda não é cadastrado? <a href="{{ url_for('index') }}">fazer cadastro</a></p>
+    </form>
+</body>
+</html>
